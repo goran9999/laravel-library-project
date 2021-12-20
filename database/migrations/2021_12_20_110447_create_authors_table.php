@@ -20,6 +20,10 @@ class CreateAuthorsTable extends Migration
             $table->integer('birthYear');
             $table->timestamps();
         });
+
+        Schema::table('authors',function (Blueprint $table){
+            $table->foreignId("epoch_id");
+        });
     }
 
     /**
@@ -30,5 +34,9 @@ class CreateAuthorsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('authors');
+
+        Schema::table('authors',function (Blueprint $table){
+            $table->dropForeign("epoch_id");
+        });
     }
 }

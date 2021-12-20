@@ -20,6 +20,8 @@ class CreateBooksTable extends Migration
             $table->string('publishingHouse');
             $table->integer('circulation');
             $table->string('ISBN');
+            $table->foreignId('user_id');
+            $table->foreignId('category_id');
             $table->timestamps();
         });
     }

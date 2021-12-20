@@ -15,6 +15,8 @@ class CreateLiteratureWorksTable extends Migration
     {
         Schema::create('literature_works', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('book_id');
+            $table->foreignId('author_id');
             $table->date('publishingDate');
             $table->string('promotionPlace');
             $table->timestamps();
