@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\Epoch;
 class AuthorFactory extends Factory
 {
     /**
@@ -14,7 +14,10 @@ class AuthorFactory extends Factory
     public function definition()
     {
         return [
-            //
+           'firstName'=>$this->faker->firstName(),
+           'lastName'=>$this->faker->lastName(),
+           'birthYear'=>$this->faker->year(),
+           'epoch_id'=>$this->faker->numberBetween(1,6)
         ];
     }
 }

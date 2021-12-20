@@ -14,7 +14,9 @@ class EpochFactory extends Factory
     public function definition()
     {
         return [
-            //
+            // 'name'=>$this->faker->word(),
+            // 'duration'=>$this->faker->numberBetween(30,200),
+            // 'century'=>$this->faker->numberBetween(13,21)
         ];
     }
 }

@@ -22,6 +22,7 @@ class CreateBooksTable extends Migration
             $table->string('ISBN');
             $table->foreignId('user_id');
             $table->foreignId('category_id');
+            $table->foreignId('author_id');
             $table->timestamps();
         });
     }
