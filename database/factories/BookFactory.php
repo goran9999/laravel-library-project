@@ -24,7 +24,7 @@ class BookFactory extends Factory
             'circulation'=>$this->faker->numberBetween(100,5000),
             'user_id'=>User::factory(),
             'author_id'=>Author::factory(),
-            'category_id'=>$this->faker->numberBetween(1,3),
+            'category_id'=>$this->faker->numberBetween(1,9),
             'ISBN'=>$this->faker->regexify('([1-9][1-9][1-9][1-9]-){4}')
         ];
     }

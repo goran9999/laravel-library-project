@@ -22,5 +22,23 @@ class CategorySeeder extends Seeder
         Category::create([
             'name'=>'Drama'
         ]);
+        Category::create([
+            'name'=>'Comic Book'
+        ]);
+        Category::create([
+            'name'=>'Detective and Mystery'
+        ]);
+        Category::create([
+            'name'=>'Fantasy'
+        ]);
+        Category::create([
+            'name'=>'Historical Fiction'
+        ]);
+        Category::create([
+            'name'=>'Horror'
+        ]);
+        Category::create([
+            'name'=>'Romance'
+        ]);
     }
 }
