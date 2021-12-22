@@ -15,7 +15,16 @@ class UserController extends Controller
      */
     public function index(User $user)
     {
-        
+        $users=User::all();
+
+        if(count($users)==0){
+            return response()->json('There is no registered users in system!');
+        }
+        $my_users=array();
+        foreach($users as $user){
+            array_push($my_users,new UserResource($user));
+        }
+        return $my_users;
     }
 
     public function show(User $user){
@@ -37,22 +46,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $user=new User;
-        $user->name=$request->name;
-        $user->email=$request->email;
-        $password=$request->password;
-        $cryptedPassword=bcrypt($password);
-        $user->email_verified_at=date('Y-m-d H:i:s');
-        $user->password=$cryptedPassword;
-
-        $result=$user->save();
-        if($result==true){
-            return "You registered successfully!";
-        }
-        return "Problem registering user!";
-    }
+   
 
     /**
      * Display the specified resource.
