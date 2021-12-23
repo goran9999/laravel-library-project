@@ -41,13 +41,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
    
     Route::get('my-books',[BookController::class,'myBooks']);
 
-    Route::get('/logout',[AuthController::class,'logout']);
-    
-    // Route::post('add-book',[BookController::class,'store']);
-    
-    // Route::post('update-book/{id}',[BookController::class,'update']);
-
-    // Route::delete('/delete-book/{id}',[BookController::class,'destroy']);
+    Route::post('/logout',[AuthController::class,'logout']);
 
     Route::resource('books',BookController::class)->only('store','update','destroy');
     
